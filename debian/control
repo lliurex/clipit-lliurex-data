@@ -2,8 +2,8 @@ Source: clipit-lliurex-data
 Section: x11
 Priority: optional
 Maintainer: LliureX Team <lliurex@gva.es>
-Build-Depends: debhelper (>= 7), llxcfg-dev
-Standards-Version: 3.9.3
+Build-Depends: debhelper (>= 10),python3-poinstaller
+Standards-Version: 4.1.2
 
 
 Package: clipit-lliurex-data

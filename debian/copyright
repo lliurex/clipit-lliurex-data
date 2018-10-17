@@ -1,6 +1,5 @@
 Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=143
 Upstream-Name: clipit-lliurex-data
-Upstream-Source: http://svn.lliurex.net/xenial/clipit-lliurex-data
 
 Files: *
 Copyright: Copyright © 2017 Hector Garcia Huerta <hectorgh@gmail.com>
