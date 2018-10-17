@@ -1,0 +1,25 @@
+#!/bin/bash
+
+set -e
+
+
+if [ "$1" = "remove" ] ; then
+
+        PKG="clipit-lliurex-data"
+
+        ORIGINAL_AUTOSTART_FILE="/etc/xdg/autostart/clipit-startup.desktop"
+        DIVERTED_AUTOSTART_FILE="/usr/share/clipit-lliurex-data/diversions/clipit-startup.desktop"
+        LLIUREX_AUTOSTART_FILE="/usr/share/clipit-lliurex-data/autostart/clipit-startup.desktop"
+
+
+	if [ -L "$ORIGINAL_AUTOSTART_FILE" ]; then
+		rm -rf "$ORIGINAL_AUTOSTART_FILE" || true
+		dpkg-divert --remove --package ${PKG} --rename --divert "$DIVERTED_AUTOSTART_FILE" "$ORIGINAL_AUTOSTART_FILE"
+
+	fi
+
+
+fi
+#DEBHELPER#
+
+exit 0

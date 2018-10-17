@@ -1,0 +1,15 @@
+Source: clipit-lliurex-data
+Section: x11
+Priority: optional
+Maintainer: LliureX Team <lliurex@gva.es>
+Build-Depends: debhelper (>= 7), llxcfg-dev
+Standards-Version: 3.9.3
+
+
+Package: clipit-lliurex-data
+Architecture: all
+Section: x11
+Depends: ${misc:Depends}, clipit
+Description: Clipit custom configuration
+ Lliurex clipit configuration
+

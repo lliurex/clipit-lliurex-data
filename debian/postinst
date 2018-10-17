@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -e
+
+
+
+
+if  [ "$1" = "configure" ] ; then
+
+	PKG="clipit-lliurex-data"
+
+	ORIGINAL_AUTOSTART_FILE="/etc/xdg/autostart/clipit-startup.desktop"
+	DIVERTED_AUTOSTART_FILE="/usr/share/clipit-lliurex-data/diversions/clipit-startup.desktop"
+	LLIUREX_AUTOSTART_FILE="/usr/share/clipit-lliurex-data/autostart/clipit-startup.desktop"
+
+
+	if [ ! -L "$ORIGINAL_AUTOSTART_FILE" ]; then
+
+                dpkg-divert --add --package ${PKG} --rename --divert "$DIVERTED_AUTOSTART_FILE" "$ORIGINAL_AUTOSTART_FILE"
+                ln -s "$LLIUREX_AUTOSTART_FILE" "$ORIGINAL_AUTOSTART_FILE"
+
+        fi
+
+fi
+
+#DEBHELPER#
+
+exit 0
+
